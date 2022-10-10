@@ -1,0 +1,236 @@
+libdiscid (0.6.2-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/copyright: Change Format URL to correct one
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Felipe Sateler ]
+  * Change maintainer address to debian-multimedia@lists.debian.org
+
+  [ Sebastian Ramacher ]
+  * debian/control:
+    - Bump Standards-Version.
+  * debian/:
+    - Use https upstream URLs.
+    - Bump debhelper compat level to 11.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 22 May 2018 15:54:35 +0200
+
+libdiscid (0.6.2-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 16 Jun 2017 00:59:02 +0200
+
+libdiscid (0.6.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * debian/patches: Removed, included upstream.
+  * debian/{control,rules,libdiscid-doc.lintian-overrides}: doxygen's
+    jquers.js is not the same as jquery.
+  * debian/rules: Drop obsolete override.
+  * debian/copyright: Update copyright years.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 30 Jan 2017 20:48:22 +0100
+
+libdiscid (0.6.1-6) unstable; urgency=medium
+
+  * debian/{control,compat,rules}: Bump debhelper compat to 10.
+  * debian/control:
+    - Bump Standards-Version to 3.9.8.
+    - Update Vcs-Git.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 16 Nov 2016 20:44:51 +0100
+
+libdiscid (0.6.1-5) unstable; urgency=medium
+
+  * Move to automatic debug packages.
+    - debian/control:
+      + Bump debhelper B-D to 9.20151219.
+      + Remove libdiscid0-dbg package.
+    - debian/rules: Call dh_strip with --ddeb-migration.
+  * debian/control: Update Vcs-Git.
+  * debian/rules: Update dh_auto_clean override.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 20 Dec 2015 21:04:17 +0100
+
+libdiscid (0.6.1-4) unstable; urgency=medium
+
+  * debian/control:
+    - Remove transitional libdiscid0-dev package.
+    - Bump Standards-Version to 3.9.6.
+    - Remove obsolete Breaks and Replaces from libdiscid-dev.
+    - Add graphviz to Build-Depends-Indep.
+  * debian/copyright:
+    - Update copyright years.
+    - Fix path for src/ntddcdrm.h.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 03 May 2015 14:54:30 +0200
+
+libdiscid (0.6.1-3) unstable; urgency=medium
+
+  * Remove SOVERSION from -dev package.
+    - debian/control: Rename libdiscid0-dev to libdiscid-dev and provide
+      transitional libdiscid0-dev package.
+    - Renamed debian/libdiscid0-dev.install to debian/libdiscid-dev.install.
+  * debian/rules: Make the package build twice in a row.
+  * debian/control: Bump Standards-Version to 3.9.5.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 01 Jul 2014 18:52:37 +0200
+
+libdiscid (0.6.1-2) unstable; urgency=low
+
+  * debian/patches/generic-dev-null.patch: Don't return an empty string for
+    the default device in the generic backend. Fixes build failure on
+    hurd-i386.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 04 Oct 2013 01:13:08 +0200
+
+libdiscid (0.6.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/libdiscid0.symbols: Add new symbol discid_get_toc_string.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Thu, 03 Oct 2013 20:26:53 +0200
+
+libdiscid (0.5.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/libdiscid-doc.docs: Ship README and AUTHORS in the -doc package.
+  * debian/control: Drop version from Suggests in libdiscid0-dev.
+  * debian/rules: Ensure that libdiscid is built with -DNDEBUG
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Thu, 01 Aug 2013 23:51:28 +0200
+
+libdiscid (0.5.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/rules: Enable verbose build output.
+  * debian/copyright: Document src/ntddcdrm.h.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Thu, 20 Jun 2013 18:23:28 +0200
+
+libdiscid (0.5.0-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 04 May 2013 22:31:50 +0200
+
+libdiscid (0.5.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/libdiscid0.symbols:
+    - Add new symbol discid_read_sparse.
+    - Remove private symbols.
+      These symbols are only used internally and are not used by any reverse
+      dependency. They were exported unintentionally and were never listed in
+      the header. Upstream now hides them properly.
+    - Add Build-Depends-Package.
+  * debian/rules: Enable parallel builds.
+  * debian/copyright: Update Lukáš Lalinský's copyright years.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 12 Apr 2013 18:22:09 +0200
+
+libdiscid (0.4.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/patches/hurd.patch: Not needed anymore, superseded by upstream's
+    generic platform support.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 08 Mar 2013 19:10:48 +0100
+
+libdiscid (0.4.0-1) experimental; urgency=low
+
+  * New upstream release. (Closes: #702570)
+  * debian/rules: Run docs target instead of running doxygen manually.
+  * debian/libdiscid0.symbols: Add new symbols.
+  * debian/patches/hurd.patch: Refresh.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 08 Mar 2013 15:27:57 +0100
+
+libdiscid (0.3.2-1) experimental; urgency=low
+
+  * New upstream release. (Closes: #700366)
+  * debian/copyright: Add Johannes Dewender.
+  * debian/patches/hurd.path: Refresh.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 12 Feb 2013 11:06:24 +0100
+
+libdiscid (0.3.0-2) experimental; urgency=low
+
+  * debian/control:
+    - Add Vcs* fields.
+    - Add libdiscid0-dbg package.
+    - Add libdiscid-doc package.
+    - Add doxygen to Build-Depends to build the documentation.
+  * debian/rules:
+    - Build the -dbg package.
+    - Run doxygen and build the -doc package.
+  * Install examples in the -doc package.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Thu, 07 Feb 2013 15:43:04 +0100
+
+libdiscid (0.3.0-1) experimental; urgency=low
+
+  * New maintainer. (Closes: #555893)
+  * New upstream release.
+  * debian/rules:
+    - Rewrite to use dh(1).
+    - Use dh-autoreconf to update configure.
+  * debian/control:
+    - Remove cdbs from Build-Depends.
+    - Remove ${shlibs:Depends} from libdiscid-dev's Depends.
+    - Bump Standards-Version to 3.9.4, no changes required.
+  * debian/patches:
+    - autoreconf.patch: Removed, not needed anymore.
+    - kfreebsd.patch: Removed, merged upstream.
+    - hurd.patch: Refreshed.
+  * debian/libdiscid0.symbols: Add new symbols.
+  * debian/copyright:
+    - Convert to Copyright Format 1.0.
+    - Update copyright holders.
+    - Add myself.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Thu, 07 Feb 2013 01:00:41 +0100
+
+libdiscid (0.2.2-3) unstable; urgency=low
+
+  * QA upload.
+  * Build with Multiarch support.
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 14 Feb 2012 01:51:45 +0100
+
+libdiscid (0.2.2-2) unstable; urgency=low
+
+  * QA upload.
+  * Get rid of unneeded *.la files (Closes: #621615).
+  * Bump Standards.
+
+ -- Alessio Treglia <alessio@debian.org>  Fri, 03 Jun 2011 11:29:36 +0200
+
+libdiscid (0.2.2-1) unstable; urgency=low
+
+  * QA upload.
+  * New upstream release. (Closes: #504115)
+  * debian/control:
+    - Use Homepage field instead of using the extended description for that.
+    - Use ${source:Version} instead of deprecated ${binary:Version}.
+    - Bump Standards-Version to 3.8.3.
+    - Drop duplicate binary control field "section".
+    - Fix duplicate short description.
+  * Refer to versioned LGPL license.
+  * Bump debhelper version to 7.
+  * debian/rules: Fix order of includes.
+  * Update debian/copyright.
+  * Use new 3.0 (quilt) source format.
+  * Add kfreebsd.patch for fix FTBFS on GNU/kFreeBSD (Closes: #546912).
+  * Add hurd.patch to fix the FTBFS on GNU/Hurd (Closes: #558756).
+  * Add symbols file to libdiscid0.
+
+ -- Benjamin Drung <bdrung@ubuntu.com>  Sat, 05 Dec 2009 23:12:11 +0100
+
+libdiscid (0.1.0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #390240)
+
+ -- Lukáš Lalinský <lalinsky@gmail.com>  Sat, 30 Aug 2006 01:31:03 +0200

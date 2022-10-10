@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+# always build with -DNDEDUG to get rid of the asserts
+export DEB_CPPFLAGS_MAINT_APPEND=-DNDEBUG
+
+%:
+	dh $@
+
+override_dh_auto_clean-indep:
+	rm -rf docs
+
+override_dh_auto_build-indep:
+	$(MAKE) docs
+	rm -f docs/installdox
+	find docs -name *.md5 -delete
+
+# no tests and install for indep
+override_dh_auto_test-indep override_dh_auto_install-indep:
